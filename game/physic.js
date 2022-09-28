@@ -3,11 +3,12 @@ function update()
     var delta = clock.getDelta(); // seconds.
     var moveDistance = 50 * delta; // 200 pixels per second
     var rotateAngle = Math.PI / 2 * delta * 2;   // pi/2 radians (90 degrees) per second
+    var rotateAngleMinus = Math.PI / 2 * delta * 2 * (-1);   // -pi/2 radians (90 degrees) per second
 
     if (keyboard.pressed("left"))
         player1.turnLeft(rotateAngle);
     if (keyboard.pressed("right"))
-        player1.turnRight(rotateAngle);
+        player1.turnRight(rotateAngleMinus);
     if (keyboard.pressed("up"))
         player1.accelerate(moveDistance);
     if (keyboard.pressed("down"))
